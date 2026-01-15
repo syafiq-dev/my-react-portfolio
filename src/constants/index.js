@@ -243,15 +243,24 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
+    title: "System Engineer | Full-stack Developer",
+    job: "Full-stack developer for Warehouse Management System | Manufacturing System",
+    date: "2023 - Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      "Contributed in numerous WMS/ Manufacturing System projects by improving 30+ legacy Oracle PL/SQL packages, procedures and functions for improvemenst, " +
+        "reducing inventory errors, increasing data flow efficiency, implementing new business process and meeting target project requirements.",
+      "Built interactive web-based dashboards and inventory managers with Coldfusion, jQuery/Bootstrap, HTML and JavaScript programming language for inventory data viewing, analysis and processing",
+    ],
+  },
+  {
+    title: "METI Japan Intern",
+    job: "Unity Engine [C#] | Video Game | VR Developer",
+    date: "2019",
+    contents: [
+      "Built AR/VR concept & trial based applications during METI Intership at Nagoya, Aichi, Japan for innovative training game experience leveraging C# and Unity-engine",
+      "Researced and explored on implementing external scripting libraries on new technologies and immersive virtual experience using innovative devices " +
+        "such as the Azure Kinect, lead hand gesture device (Leap Motion) and Oculus Virtual Reality headset",
+      "Enrolled in METI Japan Internship Program that enchanced self-growth and exposed to the international working environment, living and learning culture in Japan",
     ],
   },
   {
@@ -276,36 +285,38 @@ export const experiences = [
     ],
   },
 ];
+
 export const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    name: "Norikhwaniah",
+    username: "Wani Manufacturing",
+    body: "Fast response on troubleshooting system issues that require urgent attention.",
     img: "https://robohash.org/jack",
   },
+  {
+    name: "Norhafiy Imran",
+    username: "Hafiy Accessories Center",
+    body: "Assisted a lot on solving end month closing issue that speed up my work",
+    img: "https://robohash.org/john",
+  },
+  {
+    name: "Fitriyah",
+    username: "Fit Production Planning",
+    body: "One of the creative developers that really delivers my project requirements and needs!",
+    img: "https://robohash.org/alice",
+  },
+  {
+    name: "Safwan Firdaus",
+    username: "@safwan",
+    body: "Incredible colleague with phenomenal programming skills at his age",
+    img: "https://robohash.org/bob",
+  },
+  /* 
   {
     name: "Jill",
     username: "@jill",
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://robohash.org/jill",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://robohash.org/john",
-  },
-  {
-    name: "Alice",
-    username: "@alice",
-    body: "This is hands down the best thing I've experienced. Highly recommend!",
-    img: "https://robohash.org/alice",
-  },
-  {
-    name: "Bob",
-    username: "@bob",
-    body: "Incredible work! The attention to detail is phenomenal.",
-    img: "https://robohash.org/bob",
   },
   {
     name: "Charlie",
@@ -324,5 +335,5 @@ export const reviews = [
     username: "@eve",
     body: "So glad I found this. It has changed the game for me.",
     img: "https://robohash.org/eve",
-  },
+  }, */
 ];
