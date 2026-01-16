@@ -6,50 +6,114 @@ Source: https://sketchfab.com/3d-models/toon-japan-honda-nsx-d8bb76afe9c14a7ebe4
 Title: TOON Japan : Honda NSX
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useEffect, useRef } from "react";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import { useMotionValue, useSpring } from "motion/react";
+import { useFrame } from "@react-three/fiber";
 
 export function Nsx(props) {
-  const { nodes, materials } = useGLTF('/models/toon_japan__honda_nsx.glb')
+  const group = useRef();
+  const { nodes, materials, animations } = useGLTF(
+    "/models/toon_japan__honda_nsx.glb"
+  );
+  const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    if (animations.length > 0) {
+      actions[animations[0].name]?.play();
+    }
+  }, [actions, animations]);
+
+  const yPosition = useMotionValue(5);
+  const ySpring = useSpring(yPosition, { damping: 30 });
+
+  useEffect(() => {
+    ySpring.set(-1);
+  }, [ySpring]);
+
+  useFrame((state) => {
+    group.current.position.y = ySpring.get();
+
+    //continouse rotation
+    group.current.rotation.y = state.clock.getElapsedTime() * 0.2;
+    // group.current.rotation.z = state.clock.getElapsedTime() * 0.2;
+  });
+
   return (
-    <group {...props} dispose={null}>
-      <group position={[0, 0.209, 0]}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      // rotation={[1, 0, 2.2]}
+      // rotation={[-Math.PI / 2, -0.2, 2.2]}
+      scale={props.scale || 1.4}
+      position={props.position || [1, 0, 0]}>
+      <group>
+        {/* <group position={[0, 0.209, 0]}> */}
         <mesh geometry={nodes.Object_4.geometry} material={materials.Windows} />
         <mesh geometry={nodes.Object_5.geometry} material={materials.Black} />
         <mesh geometry={nodes.Object_6.geometry} material={materials.Paint} />
-        <mesh geometry={nodes.Object_7.geometry} material={materials.material} />
-        <mesh geometry={nodes.Object_8.geometry} material={materials.White_Lights} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials.Red_Lights} />
+        <mesh
+          geometry={nodes.Object_7.geometry}
+          material={materials.material}
+        />
+        <mesh
+          geometry={nodes.Object_8.geometry}
+          material={materials.White_Lights}
+        />
+        <mesh
+          geometry={nodes.Object_9.geometry}
+          material={materials.Red_Lights}
+        />
         <mesh geometry={nodes.Object_10.geometry} material={materials.Chrome} />
-        <mesh geometry={nodes.Object_11.geometry} material={materials.Interior} />
+        <mesh
+          geometry={nodes.Object_11.geometry}
+          material={materials.Interior}
+        />
         <group position={[0.71, -0.091, -0.343]}>
           <mesh geometry={nodes.Object_13.geometry} material={materials.Disk} />
           <mesh geometry={nodes.Object_14.geometry} material={materials.Tire} />
           <mesh geometry={nodes.Object_15.geometry} material={materials.Rims} />
-          <mesh geometry={nodes.Object_16.geometry} material={materials.Caliper} />
+          <mesh
+            geometry={nodes.Object_16.geometry}
+            material={materials.Caliper}
+          />
         </group>
         <group position={[0.684, -0.091, 0.329]}>
           <mesh geometry={nodes.Object_18.geometry} material={materials.Disk} />
           <mesh geometry={nodes.Object_19.geometry} material={materials.Tire} />
           <mesh geometry={nodes.Object_20.geometry} material={materials.Rims} />
-          <mesh geometry={nodes.Object_21.geometry} material={materials.Caliper} />
+          <mesh
+            geometry={nodes.Object_21.geometry}
+            material={materials.Caliper}
+          />
         </group>
         <group position={[0.93, -0.015, -0.008]} scale={0.1}>
-          <mesh geometry={nodes.Object_23.geometry} material={materials.Black} />
-          <mesh geometry={nodes.Object_24.geometry} material={materials.Paint} />
-          <mesh geometry={nodes.Object_25.geometry} material={materials.White_Lights} />
+          <mesh
+            geometry={nodes.Object_23.geometry}
+            material={materials.Black}
+          />
+          <mesh
+            geometry={nodes.Object_24.geometry}
+            material={materials.Paint}
+          />
+          <mesh
+            geometry={nodes.Object_25.geometry}
+            material={materials.White_Lights}
+          />
         </group>
         <group position={[0, -0.209, 0]}>
           <mesh geometry={nodes.Object_27.geometry} material={materials.Disk} />
           <mesh geometry={nodes.Object_28.geometry} material={materials.Tire} />
           <mesh geometry={nodes.Object_29.geometry} material={materials.Rims} />
-          <mesh geometry={nodes.Object_30.geometry} material={materials.Caliper} />
+          <mesh
+            geometry={nodes.Object_30.geometry}
+            material={materials.Caliper}
+          />
         </group>
       </group>
     </group>
-  )
+  );
 }
 
-
-
-useGLTF.preload('/models/toon_japan__honda_nsx.glb')
+useGLTF.preload("/models/toon_japan__honda_nsx.glb");
