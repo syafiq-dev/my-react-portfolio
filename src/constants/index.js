@@ -243,8 +243,8 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "System Engineer | Full-stack Developer",
-    job: "Full-stack developer for Warehouse Management System | Manufacturing System",
+    title: "Full-stack Developer",
+    job: "System Engineer for Warehouse Management System & Manufacturing System",
     date: "2023 - Present",
     contents: [
       "Contributed in numerous WMS/ Manufacturing System projects by improving 30+ legacy Oracle PL/SQL packages, procedures and functions for improvemenst, " +
