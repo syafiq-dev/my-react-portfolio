@@ -269,7 +269,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Back-End Developer Wife saya Noni",
+    title: "Back-End Developer",
     job: "Car Manufacture",
     date: "2023-2024",
     contents: [
