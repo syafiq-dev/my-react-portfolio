@@ -224,20 +224,20 @@ export const myProjects = [
 ];
 
 export const mySocials = [
-  // {
-  //   name: "WhatsApp",
-  //   href: "",
-  //   icon: "/assets/socials/whatsApp.svg",
-  // },
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/ali-sanati/",
+    href: "https://www.linkedin.com/in/syafiq-saharudin/",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Github",
     href: "https://github.com/syafiq-dev",
-    icon: "/assets/logos/github.svg",
+    icon: "/assets/logos/github-white.svg",
+  },
+  {
+    name: "Resume",
+    href: "https://spoo.me/syafiq-resume",
+    icon: "/assets/logos/resume-logo.svg",
   },
   // {
   //   name: "Instagram",
